@@ -1,0 +1,190 @@
+/* Estilos generales */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  /* min-height: 100vh; */
+}
+
+/* Diseñamos nuestro modelaje de cajas con GRID para la distribución de nuestro sitio */
+.grid-container {
+  display: grid;
+  gap: 10px;
+  padding: 0 20px;
+  grid-template:
+    "header" auto
+    "main" auto
+    "footer" auto;
+  header {
+    grid-area: header;
+  }
+  main {
+    grid-area: main;
+  }
+  footer {
+    grid-area: footer;
+  }
+}
+
+.header {
+  text-align: center;
+}
+
+h1 {
+  font-size: 15px;
+}
+
+/* Propiedades de nuestra imagen principal del sitio */
+.img img {
+  max-width: 100%;
+  height: 150px;
+  width: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+/* Propiedades generales de nuestras cajas que poseen el tiempo estimado (fuera de las cajas)*/
+.time {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+}
+
+/* Se quita el interlineado por defecto entre los textos dentro de las cajaspor utilizar la etiqueta "p" */
+.time div p {
+  margin: 0;
+}
+
+/* Propiedades de nuestras cajas que tienen el tiempo estimado (dentro de las cajas) */
+.time div {
+  border-radius: 10px;
+  width: 100px;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 5px;
+}
+
+/* Colores generales de las cajas y el footer */
+.time div,
+.footer {
+  background-color: rgb(239, 239, 239);
+}
+
+/* propiedades de los textos dentro de las cajas del apartado "tiempo estimado" */
+.main .time .time-t {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+/* Propiedades a todos los textos que posean la clase "tittle" */
+.tittle {
+  font-size: 20px;
+}
+
+/* Propiedad de negrita para nuestros numeros en la lista ordenada */
+ol li::marker {
+    font-weight: bold;
+  }
+
+/* propiedades para el footer */
+.footer {
+  border-radius: 10px 10px 0px 0px;
+  color: rgb(134, 0, 0);
+  text-align: center;
+}
+
+/* adaptación para dispositivos de pantallas súper pequeñas (casi obsoletos) */
+@media only screen and (min-width: 320px) {
+    .grid-container {
+        padding: 0px 20px;
+      }
+    
+      .img img {
+        height: 170px;
+      }
+    
+      .time div {
+        width: 90px;
+        padding-left: 5px;
+      }
+}
+
+/* adaptación para dispositivos de pantallas de la mayoria de telefonos Celulares */
+@media only screen and (min-width: 400px) {
+    .grid-container {
+        padding: 0px 20px;
+      }
+    
+      .img img {
+        height: 170px;
+      }
+    
+      .time div {
+        width: 120px;
+        padding-left: 10px;
+      }
+}
+
+/* adaptación para dispositivos de pantallas de algunos celulares de mayor pixelaje y tablets*/
+@media only screen and (min-width: 600px) {
+  .grid-container {
+    padding: 0px 40px;
+  }
+
+  .img img {
+    height: 200px;
+  }
+
+  .time div {
+    width: 160px;
+    height: 70px;
+    padding-left: 10px;
+  }
+}
+
+/* adaptación para dispositivos de pantallas en tables y algunas laptops*/
+@media only screen and (min-width: 992px) {
+  .grid-container {
+    padding: 0px 50px;
+  }
+
+  .img img {
+    height: 300px;
+  }
+
+  .time div {
+    width: 200px;
+    height: 70px;
+    padding-left: 20px;
+  }
+}
+
+/* adaptación para dispositivos de pantallas en laptos y pantallas de mayor pixelaje*/
+@media only screen and (min-width: 1200px) {
+  .grid-container {
+    padding: 0px 60px;
+    padding-top: 10px;
+  }
+
+  .img img {
+    height: 400px;
+  }
+
+  .time div {
+    width: 250px;
+    height: 80px;
+    padding-left: 20px;
+  }
+}
